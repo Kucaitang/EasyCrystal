@@ -734,7 +734,7 @@ def main():
     vector_len *= scale_factor
     print(vector_len)
 
-    info = extract_cif_data("C:\\Users\\15194\\Downloads\\1001663.cif")
+    info = extract_cif_data("C:\\Users\\username\\Downloads\\1001663.cif")
     axes = trans_to_axes(info)
     possible_direction = get_close_direction(axes, vector_len[0], vector_len[1], tolerance=0.05)
     acceptable_direction = where_legal_direction(axes, vector_degree, possible_direction, tolerance=0.05)
