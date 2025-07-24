@@ -725,7 +725,12 @@ def dedup(ori_array):
 
 
 def main():
-    vector_len, vector_degree = get_main_vector(1., 2000, path="D:\\my_pics\\1001663_001.png")
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    png_path = os.path.join(script_dir, "1001663.png")
+    cif_path = os.path.join(script_dir, "1001663.cif")
+    
+    vector_len, vector_degree = get_main_vector(1., 2000, path=png_path)
     print(vector_len, vector_degree * 180 / np.pi)
 
     cam_constant = 78.125/0.1942
@@ -734,7 +739,7 @@ def main():
     vector_len *= scale_factor
     print(vector_len)
 
-    info = extract_cif_data("C:\\Users\\username\\Downloads\\1001663.cif")
+    info = extract_cif_data(cif_path)
     axes = trans_to_axes(info)
     possible_direction = get_close_direction(axes, vector_len[0], vector_len[1], tolerance=0.05)
     acceptable_direction = where_legal_direction(axes, vector_degree, possible_direction, tolerance=0.05)

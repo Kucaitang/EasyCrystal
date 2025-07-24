@@ -1,0 +1,55 @@
+# 晶体结构空间群分类配置文件
+# 使用方法: python train_crystal_gnn.py --config config.yaml
+
+# 数据参数
+data:
+  cif_dir: "cif_data"              # CIF文件目录
+  max_neighbors: 12                # 每个原子的最大邻居数
+  cutoff_radius: 5.0              # 邻居搜索截断半径(Å)
+
+# 模型参数
+model:
+  model_type: "GCN"               # GNN模型类型 (GCN/GIN)
+  hidden_dim: 128                 # 隐藏层维度
+  num_layers: 3                   # GNN层数
+  dropout: 0.2                    # Dropout概率
+
+# 训练参数
+training:
+  batch_size: 32                  # 批大小
+  num_epochs: 100                 # 训练轮数
+  learning_rate: 0.001            # 学习率
+  weight_decay: 0.0001            # 权重衰减
+
+# 数据划分
+split:
+  train_ratio: 0.8                # 训练集比例
+  val_ratio: 0.1                  # 验证集比例
+  test_ratio: 0.1                 # 测试集比例
+
+# 系统参数
+system:
+  device: "auto"                  # 计算设备 (auto/cpu/cuda)
+  num_workers: 4                  # 数据加载器工作进程数
+  seed: 42                        # 随机种子
+  save_dir: "results"             # 结果保存目录
+
+# 高级配置
+advanced:
+  # 早停参数
+  early_stopping:
+    patience: 10                  # 早停耐心值
+    min_delta: 0.001             # 最小改进阈值
+  
+  # 学习率调度
+  lr_scheduler:
+    type: "ReduceLROnPlateau"     # 调度器类型
+    factor: 0.5                  # 学习率衰减因子
+    patience: 5                  # 调度器耐心值
+    min_lr: 0.00001             # 最小学习率
+  
+  # 数据增强
+  augmentation:
+    enabled: false               # 是否启用数据增强
+    rotation: true               # 随机旋转
+    noise_std: 0.01             # 噪声标准差
