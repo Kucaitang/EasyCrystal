@@ -1,0 +1,39 @@
+# 深度学习框架
+torch>=1.12.0
+torchvision>=0.13.0
+torchaudio>=0.12.0
+torch-geometric>=2.1.0
+
+# 材料科学库
+pymatgen>=2022.7.25
+ase>=3.22.0
+
+# 机器学习和数据处理
+scikit-learn>=1.1.0
+numpy>=1.21.0
+pandas>=1.4.0
+scipy>=1.8.0
+
+# 可视化
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# 进度条和工具
+tqdm>=4.64.0
+pyyaml>=6.0
+jupyter>=1.0.0
+ipywidgets>=7.7.0
+
+# 图处理（可选，用于可视化）
+networkx>=2.8.0
+
+# 其他工具
+click>=8.0.0
+colorama>=0.4.0
+tabulate>=0.8.0
+
+# 开发工具（可选）
+pytest>=7.0.0
+black>=22.0.0
+flake8>=4.0.0
