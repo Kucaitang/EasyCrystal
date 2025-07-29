@@ -1,0 +1,20 @@
+{
+  "cif_dir": "cif_data",
+  "max_neighbors": 12,
+  "cutoff_radius": 5.0,
+  "model_type": "GCN",
+  "hidden_dim": 128,
+  "num_layers": 3,
+  "dropout": 0.2,
+  "batch_size": 32,
+  "num_epochs": 100,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "train_ratio": 0.8,
+  "val_ratio": 0.1,
+  "test_ratio": 0.1,
+  "save_dir": "results",
+  "device": "auto",
+  "num_workers": 4,
+  "seed": 42
+}
